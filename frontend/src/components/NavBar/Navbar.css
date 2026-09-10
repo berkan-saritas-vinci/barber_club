@@ -1,26 +1,37 @@
-nav {
-  background-color: var(--primary-main);
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding: 16px 0;
 }
 
-nav button {
-  background-color: var(--secondary-main);
-  color: var(--secondary-contrast-text);
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-  margin-right: 1rem  ;
+.nav__link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 16px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-nav button:hover {
-  background-color: var(--secondary-light);
+.nav__link:hover {
+    color: var(--text-h);
 }
 
-nav button:active {
-  background-color: var(--secondary-dark);
-  color: var(--primary-contrast-text);
+.nav__link--active {
+    color: var(--text-h);
+    border-bottom: 2px solid var(--accent);
+    font-weight: 600;
+}
+
+.nav__logout {
+    color: var(--text);
+}
+
+.nav__logout:hover {
+    color: var(--text-h);
 }
