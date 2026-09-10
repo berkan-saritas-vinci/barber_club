@@ -1,0 +1,30 @@
+.home {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.home h1 {
+    margin-bottom: 24px;
+}
+
+.home h2 {
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+.home p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.home ul {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.home__tagline {
+    margin-top: 24px;
+    font-weight: 600;
+    font-style: italic;
+}
