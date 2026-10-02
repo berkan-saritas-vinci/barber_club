@@ -1,6 +1,7 @@
 import { useState, type SyntheticEvent } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import type { AppContext } from "../../types";
+import "./Register.css"
 
 const RegisterPage = () => {
   const { registerUser }: AppContext = useOutletContext();
@@ -30,11 +31,17 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <h1>S'inscrire</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">E-Mail:</label>
+  <div className="register-page">
+    <div className="register-card">
+      <h1 className="register-title">S'inscrire</h1>
+
+      <form className="register-form" onSubmit={handleSubmit}>
+        <label className="register-label" htmlFor="username">
+          E-Mail
+        </label>
+
         <input
+          className="register-input"
           value={username}
           type="text"
           id="username"
@@ -42,19 +49,28 @@ const RegisterPage = () => {
           onChange={handleUsernameInputChange}
           required
         />
-        <label htmlFor="password">Mot de passe:</label>
+
+        <label className="register-label" htmlFor="password">
+          Mot de passe
+        </label>
+
         <input
+          className="register-input"
           value={password}
-          type="text"
+          type="password"
           id="password"
           name="password"
           onChange={handlePasswordChange}
           required
         />
-        <button type="submit">Créer le compte</button>
+
+        <button className="register-button" type="submit">
+          Créer le compte
+        </button>
       </form>
     </div>
-  );
+  </div>
+);
 };
 
 export default RegisterPage;

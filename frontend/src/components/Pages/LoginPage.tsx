@@ -2,6 +2,7 @@ import type { SyntheticEvent } from "react";
 import { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import type { AppContext } from "../../types";
+import "./LoginPage.css"
 
 const LoginPage = () => {
   const { loginUser }: AppContext = useOutletContext();
@@ -31,11 +32,17 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h1>Connectez Vous</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">E-Mail:</label>
+  <div className="login-page">
+    <div className="login-card">
+      <h1 className="login-title">Connectez-vous</h1>
+
+      <form className="login-form" onSubmit={handleSubmit}>
+        <label className="login-label" htmlFor="username">
+          E-Mail
+        </label>
+
         <input
+          className="login-input"
           value={username}
           type="text"
           id="username"
@@ -43,19 +50,28 @@ const LoginPage = () => {
           onChange={handleUsernameInputChange}
           required
         />
-        <label htmlFor="password">Mot de passe:</label>
+
+        <label className="login-label" htmlFor="password">
+          Mot de passe
+        </label>
+
         <input
+          className="login-input"
           value={password}
-          type="text"
+          type="password"
           id="password"
           name="password"
           onChange={handlePasswordChange}
           required
         />
-        <button type="submit">S'authentifier</button>
+
+        <button className="login-button" type="submit">
+          S'authentifier
+        </button>
       </form>
     </div>
-  );
+  </div>
+);
 };
 
 export default LoginPage;
