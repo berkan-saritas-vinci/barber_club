@@ -1,95 +1,233 @@
 .home {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px 20px;
+  color: #f5f5f5;
+  background: #0f0f0f;
 }
 
-.home h1 {
-    margin-bottom: 24px;
+.hero {
+  height: 75vh;
+  background-image: url("../../assets/home_page.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.home h2 {
-    margin-top: 32px;
-    margin-bottom: 12px;
-    text-align: center;
+.hero_overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.home p {
-    margin-bottom: 16px;
-    line-height: 1.6;
+.hero_content {
+  max-width: 900px;
+  padding: 2rem;
 }
 
-.home ul {
-    margin-bottom: 16px;
-    padding-left: 20px;
+.hero_title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
 }
 
-.home__tagline {
-    margin-top: 24px;
-    font-weight: 600;
-    font-style: italic;
+.hero_subtitle {
+  font-size: 1.2rem;
+  color: #d0d0d0;
+  margin-bottom: 2rem;
+  line-height: 1.8;
 }
 
-.card {
-    background: var(--code-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: var(--shadow);
+.hero_button {
+  background: #d4af37;
+  color: #111;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.card-hours {
-    max-width: 500px;
-    margin: 32px auto;
-    text-align: left;
+.hero_button:hover {
+  transform: translateY(-3px);
+  background: #e6c14c;
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.25);
 }
 
-.card-hours h2 {
-    text-align: center;
-    margin-bottom: 16px;
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+  font-size: 2.3rem;
 }
 
-.card-hours ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px;
+.about,
+.hours-section,
+.location-section,
+.closing-section,
+.appointment-info {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5rem 2rem;
 }
 
-.card-hours li {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    border-bottom: 1px solid var(--border);
+.about {
+  text-align: center;
 }
 
-.card-hours li:last-child {
-    border-bottom: none;
+.about__text {
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #d4d4d4;
+  font-size: 1.05rem;
 }
 
-.card-hours p {
-    text-align: center;
-    margin-bottom: 12px;
+.service {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem 5rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  width: 320px;
+  background: #181818;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: #d4af37;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.service-card h3 {
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #d0d0d0;
+  line-height: 1.7;
+}
+
+.appointment-info {
+  text-align: center;
+}
+
+.appointment-info p {
+  max-width: 800px;
+  margin: 1rem auto;
+  line-height: 1.8;
+  color: #d4d4d4;
+}
+
+.hours-card {
+  max-width: 750px;
+  margin: auto;
+  background: #181818;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid #262626;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-row span:first-child {
+  font-weight: 600;
+}
+
+.hours-row span:last-child {
+  color: #d4af37;
 }
 
 .home_map-wrapper {
-    max-width: 700px;
-    margin: 16px auto 0;
-    border-radius: 8px;
-    overflow: hidden;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid #262626;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .home_map-embed {
-    display: block;
-    width: 100%;
-    height: 400px;
-    border: 0;
+  width: 100%;
+  height: 450px;
+  border: none;
+  display: block;
 }
 
-.home_map-embed {
-    display: block;
+.location-section p {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #d4af37;
+  font-size: 1.1rem;
+}
+
+.closing-section {
+  text-align: center;
+}
+
+.closing-section p:first-child {
+  color: #d4d4d4;
+  margin-bottom: 1rem;
+}
+
+.home_tagline {
+  color: #d4af37;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 65vh;
+  }
+
+  .hero_title {
+    font-size: 2.5rem;
+  }
+
+  .hero_subtitle {
+    font-size: 1rem;
+  }
+
+  .service-card {
     width: 100%;
-    height: 500px;
-    margin: 12px auto 16px;
-    border: 0;
-    border-radius: 8px;
+  }
+
+  .hours-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
 }

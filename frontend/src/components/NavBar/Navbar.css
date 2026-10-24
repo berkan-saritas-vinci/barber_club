@@ -1,37 +1,84 @@
 .nav {
-    display: flex;
-    justify-content: center;
-    gap: 48px;
-    padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 1.2rem 2rem;
+
+  background: rgba(15, 15, 15, 0.9);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.nav__link {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 16px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
+.nav_link,
+.nav_logout {
+  position: relative;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.nav__link:hover {
-    color: var(--text-h);
+
+.nav_link:hover,
+.nav_logout:hover {
+  color: #d4af37;
 }
 
-.nav__link--active {
-    color: var(--text-h);
-    border-bottom: 2px solid var(--accent);
-    font-weight: 600;
+
+.nav_link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
 }
 
-.nav__logout {
-    color: var(--text);
+.nav_link:hover::after,
+.nav_link--active::after {
+  width: 100%;
 }
 
-.nav__logout:hover {
-    color: var(--text-h);
+.nav_link--active {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.nav_logout {
+  background: transparent;
+  border: 1px solid #d4af37;
+  border-radius: 999px;
+  padding: 0.7rem 1.3rem;
+  cursor: pointer;
+}
+
+.nav_logout:hover {
+  background: #d4af37;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav_link,
+  .nav_logout {
+    font-size: 0.9rem;
+  }
 }

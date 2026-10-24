@@ -8,7 +8,7 @@ interface NavBarProps {
 }
 
 const NavBar = ({authenticatedUser, clearUser}: NavBarProps) => {
-const linkClass = ({ isActive }: { isActive: boolean }) => isActive ? "nav__link nav__link--active" : "nav__link";
+const linkClass = ({ isActive }: { isActive: boolean }) => isActive ? "nav_link nav_link--active" : "nav_link";
 
     if(authenticatedUser) {
     return (
