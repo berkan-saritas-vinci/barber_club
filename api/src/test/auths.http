@@ -1,5 +1,13 @@
-### GET request to example server
-GET https://examples.http-client.intellij.net/get
-    ?generated-in=IntelliJ IDEA
+@baseUrl = http://localhost:8080
 
-###
+### Try to register an User
+POST {{baseUrl}}/auths/register
+Content-Type: : application/json
+
+{
+    "email": "memo@mail.com",
+    "password": "Password123*"
+    "firstName": "Mehmet"
+    "lastName": "Bal"
+
+}

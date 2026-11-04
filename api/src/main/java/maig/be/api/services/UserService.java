@@ -107,8 +107,9 @@ public class UserService {
         return userRepository.findByRole(role);
     }
 
-    public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
+    public User findById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Utilisateur introuvable"));
     }
 
     public User findByEmail(String email) {
@@ -123,21 +124,29 @@ public class UserService {
         return userRepository.findByLastName(lastName);
     }
 
-    public User updateRole(Long id, String role) {
-        User user = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Utilisateur introuvable"));
+//    public User updateRole(Long id, String role) {
+//        User user = userRepository.findById(id)
+//                .orElseThrow(() -> new RuntimeException("Utilisateur introuvable"));
+//
+//        if(!"USER".equals(role) && !"ADMIN".equals(role)){
+//            throw new IllegalArgumentException("Rôle introuvable");
+//        }
+//
+//        user.setRole(role);
+//        return userRepository.save(user);
+//    }
+//
+//    public User save(User user) {
+//        return userRepository.save(user);
+//    }
 
-        if(!"USER".equals(role) && !"ADMIN".equals(role)){
-            throw new IllegalArgumentException("Rôle introuvable");
+
+    public User setRoleTo(User user) {
+        if ("USER".equals(user.getRole())) {
+            user.setRole("ADMIN");
+        } else {
+            user.setRole("USER");
         }
-
-        user.setRole(role);
         return userRepository.save(user);
     }
-
-    public User save(User user) {
-        return userRepository.save(user);
-    }
-
-
 }

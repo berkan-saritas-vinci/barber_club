@@ -1,6 +1,7 @@
 package maig.be.api.models;
 
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.time.LocalDateTime;
